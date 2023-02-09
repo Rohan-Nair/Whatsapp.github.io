@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* underline on hover */
+.navlinks {
+  position: relative;
+}
+.navlinks::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  bottom: 0;
+  content: "";
+  background-color: #25d366;
+  height: 3px;
+  width: 0%;
+  transition: 0.5s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.navlinks:hover::after {
+  width: 100%;
+  transform: scaleX(1);
+}
+/* -------------------- */
+/* navbar download button */
+.nav-download {
+  position: relative;
+}
+.nav-download:hover {
+  color: white;
+}
+.nav-download a,
+.nav-download svg {
+  z-index: 1;
+}
+.nav-download::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1c1e21;
+  border-radius: 9999px; /*tailwind css rounded-full*/
+  transform: scaleX(0);
+  transition: all 0.3s ease-in;
+  transform-origin: top;
+}
+.nav-download:hover::before {
+  transform: scaleX(1);
+}
+/* -------------------- */
+.articlecontainer {
+  height: 100vh;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+}
+/* -------------------- */
+.learnmore {
+  border-bottom: 2px solid #25d366;
+  width: fit-content;
+}
+/* -------------------- */
+/* -------------------- */
+
+/* utility class */
+.sticky {
+  position: fixed;
+  top: 0%;
+  width: 100%;
+}
